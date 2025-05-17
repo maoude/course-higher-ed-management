@@ -1,0 +1,30 @@
+{
+  "name": "course-higher-ed-management",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "homepage": "https://maoude.github.io/course-higher-ed-management",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist -m \"Deploy new site build [skip ci]\""
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.6.0", 
+    "eslint-plugin-react-hooks": "^4.6.2", 
+    "eslint-plugin-react-refresh": "^0.4.7", 
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
