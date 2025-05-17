@@ -1,6 +1,5 @@
 // src/pages/HomePage.tsx
 import React from 'react';
-// import { Link } from 'react-router-dom'; // Link is now in Navigation component
 
 const HomePage: React.FC = () => {
   return (
