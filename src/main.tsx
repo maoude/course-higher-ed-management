@@ -3,11 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css'; // Import the global CSS file
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom'; // Restored Router
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Router> {/* basename is not needed here for HashRouter with Vite's base config */}
+    <Router> {/* Restored Router wrapping App */}
       <App />
     </Router>
   </React.StrictMode>

@@ -4,8 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
-// Import ModulePage later when you create it
-// import ModulePage from './pages/ModulePage';
+import Module1Page from './pages/Module1Page'; // Import Module1Page
 
 const App: React.FC = () => {
   return (
@@ -15,8 +14,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/syllabus" element={<SyllabusPage />} />
-          {/* Example for ModulePage when you add it:
-          <Route path="/modules/:moduleId" element={<ModulePage />} />
+          <Route path="/module/1" element={<Module1Page />} /> {/* Route for Module 1 */}
+          {/* Example for other ModulePages when you add them:
+          <Route path="/modules/:moduleId" element={<ModulePage />} /> 
           */}
         </Routes>
       </div>
