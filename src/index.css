@@ -229,7 +229,7 @@ a:focus {
 .slide-actual-content {
     font-size: 1.1rem;
 }
-.slide-actual-content h1, 
+.slide-actual-content h1,
 .slide-actual-content h2,
 .slide-actual-content h3 {
     margin-top: 1.5rem;
@@ -276,4 +276,28 @@ a:focus {
 }
 .slide-indicator {
   font-size: 0.9rem;
+}
+
+/* Social Media Icons in Nav */
+.social-links {
+  margin-left: auto; /* Pushes social links to the right */
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between icons */
+}
+.social-links a {
+  color: #ffffff; /* White icons */
+  text-decoration: none;
+  display: inline-block; /* Allows transform */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: #a7c7e7; /* Lighter blue on hover */
+  transform: scale(1.15); /* Slightly enlarge icon on hover */
+}
+.social-links svg {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  fill: currentColor; /* Makes SVG color match the 'a' tag's color */
 }
