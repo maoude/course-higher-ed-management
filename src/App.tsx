@@ -5,28 +5,30 @@ import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
 import Module1Page from './pages/Module1Page';
-import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage'; // Import slides page
-import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
+import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage';
+import Module1Session2SlidesPage from './pages/Module1Session2SlidesPage'; // Import Session 2 slides page
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
-    <> {/* Using a Fragment as the Router will be in main.tsx */}
-      <ScrollToTop /> {/* Add ScrollToTop here */}
+    <>
+      <ScrollToTop />
       <Navigation />
-      <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}> {/* Wrapper for main content area */}
+      <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/syllabus" element={<SyllabusPage />} />
           <Route path="/module/1" element={<Module1Page />} />
-          <Route path="/module/1/session/1/slides" element={<Module1Session1SlidesPage />} /> {/* Route for slides */}
+          <Route path="/module/1/session/1/slides" element={<Module1Session1SlidesPage />} />
+          <Route path="/module/1/session/2/slides" element={<Module1Session2SlidesPage />} /> {/* Route for Session 2 slides */}
         </Routes>
       </div>
       <footer style={{
-        backgroundColor: '#1c3d72', // Deep blue
-        color: '#e0e7ff', // Light blueish text
+        backgroundColor: '#1c3d72',
+        color: '#e0e7ff',
         padding: '1.5rem',
         textAlign: 'center',
-        marginTop: 'auto' // Pushes footer to bottom if content is short
+        marginTop: 'auto'
       }}>
         <p>© 2025 maoude. All rights reserved. Higher Ed Management Course.</p>
       </footer>

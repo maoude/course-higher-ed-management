@@ -34,7 +34,7 @@ const Module1Page: React.FC = () => {
         <p style={{ marginTop: '1rem' }}>
           <Link to="/module/1/session/1/slides" className="font-semibold">
             View Session 1 Lecture Slides
-            <span className="module-link-icon" aria-hidden="true"> &#128240;</span> {/* Newspaper icon as placeholder */}
+            <span className="module-link-icon" aria-hidden="true"> 📰</span> {/* Newspaper icon as placeholder */}
           </Link>
         </p>
         <p><strong>Learning Activities & Exercises (to be completed between Session 1 and Session 2):</strong></p>
@@ -54,6 +54,12 @@ const Module1Page: React.FC = () => {
           <li>Key Internal and External Stakeholders and Environmental Factors influencing higher education management.</li>
           <li>Introduction to Case Study 1: "Understanding Institutional Identity and Mission."</li>
         </ul>
+        <p style={{ marginTop: '1rem' }}>
+          <Link to="/module/1/session/2/slides" className="font-semibold">
+            View Session 2 Lecture Slides
+            <span className="module-link-icon" aria-hidden="true"> 📰</span> {/* Newspaper icon as placeholder */}
+          </Link>
+        </p>
         <p><strong>Learning Activities & Exercises (to be completed after Session 2):</strong></p>
         <ol>
           <li><strong>Reading Assignment:</strong> Review materials on fundamental organizational theories as applied to university settings, and the roles of various stakeholders. (Specific readings in LMS).</li>

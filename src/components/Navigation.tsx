@@ -73,10 +73,11 @@ const Navigation: React.FC = () => {
         </li>
       </ul>
       <div className="social-links">
+        {/* Corrected plain string URLs */}
         <a href="[https://www.linkedin.com/in/mohamad-aoude-4aba1270/](https://www.linkedin.com/in/mohamad-aoude-4aba1270/)" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
-        <a href="[https://www.youtube.com/@mohamadaoude8620](https://www.youtube.com/@mohamadaoude8620)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Placeholder for actual YouTube URL */}
+        <a href="[https://www.youtube.com/@DrMohamadAoude](https://www.youtube.com/@DrMohamadAoude)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Please replace with your actual YouTube channel URL */}
           <YouTubeIcon />
         </a>
         <a href="[https://github.com/maoude/](https://github.com/maoude/)" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
