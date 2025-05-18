@@ -1,7 +1,7 @@
 // src/pages/Module1Session1SlidesPage.tsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { module1Session1Slides, Slide } from '../data/Module1Session1SlideData';
+import { module1Session1Slides, Slide } from '../data/Module1Session1SlideData'; // Import slide data
 
 const Module1Session1SlidesPage: React.FC = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);

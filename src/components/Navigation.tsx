@@ -18,29 +18,33 @@ const Navigation: React.FC = () => {
         alignItems: 'center'
       }}>
         <li>
-          <Link to="/" style={{
-            color: '#ffffff',
-            textDecoration: 'none',
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            transition: 'color 0.2s ease'
-          }}
-          onMouseOver={e => e.currentTarget.style.color = '#e0e7ff'}
-          onMouseOut={e => e.currentTarget.style.color = '#ffffff'}
+          <Link
+            to="/"
+            style={{
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              transition: 'color 0.2s ease'
+            }}
+            onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = '#e0e7ff'}
+            onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = '#ffffff'}
           >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/syllabus" style={{
-            color: '#ffffff',
-            textDecoration: 'none',
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            transition: 'color 0.2s ease'
-          }}
-          onMouseOver={e => e.currentTarget.style.color = '#e0e7ff'}
-          onMouseOut={e => e.currentTarget.style.color = '#ffffff'}
+          <Link
+            to="/syllabus"
+            style={{
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              transition: 'color 0.2s ease'
+            }}
+            onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = '#e0e7ff'}
+            onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = '#ffffff'}
           >
             Syllabus
           </Link>

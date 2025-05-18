@@ -190,3 +190,90 @@ a:focus {
 .instructor-section strong {
     color: #212529;
 }
+
+/* Slideshow Styles */
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* Adjust based on nav/footer height */
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide-content-wrapper {
+  flex-grow: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  position: relative; /* For absolute positioning of slide if needed */
+}
+
+.slide-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.slide-title {
+    font-size: 2rem; /* Adjusted from inline */
+    color: #1c3d72;
+    margin-bottom: 5px;
+}
+.slide-subtitle {
+    font-size: 1.3rem; /* Adjusted from inline */
+    color: #0056b3;
+    font-weight: normal;
+}
+.slide-actual-content {
+    font-size: 1.1rem;
+}
+.slide-actual-content h1, 
+.slide-actual-content h2,
+.slide-actual-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50; /* Darker for content headings */
+}
+.slide-actual-content h1 { font-size: 1.8em; }
+.slide-actual-content h2 { font-size: 1.5em; }
+.slide-actual-content h3 { font-size: 1.3em; }
+
+.slide-actual-content ul, .slide-actual-content ol {
+    margin-left: 20px; /* Indent lists within slide content */
+    margin-bottom: 1rem;
+}
+.slide-actual-content ul li, .slide-actual-content ol li {
+    margin-bottom: 0.5rem;
+}
+
+
+.slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1c3d72; /* Deep blue */
+  color: white;
+}
+.slideshow-controls button {
+  background-color: #0056b3; /* Medium blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+.slideshow-controls button:disabled {
+  background-color: #6c757d; /* Grey out disabled buttons */
+  cursor: not-allowed;
+}
+.slideshow-controls button:not(:disabled):hover {
+  background-color: #003d80; /* Darker blue on hover */
+}
+.slide-indicator {
+  font-size: 0.9rem;
+}

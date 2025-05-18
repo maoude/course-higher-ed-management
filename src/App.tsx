@@ -4,8 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
-import Module1Page from './pages/Module1Page'; // Import slides page
-import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage';
+import Module1Page from './pages/Module1Page';
+import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage'; // Import slides page
+
 const App: React.FC = () => {
   return (
     <> {/* Using a Fragment as the Router will be in main.tsx */}
