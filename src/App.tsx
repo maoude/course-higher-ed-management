@@ -6,10 +6,12 @@ import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
 import Module1Page from './pages/Module1Page';
 import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage'; // Import slides page
+import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
 
 const App: React.FC = () => {
   return (
     <> {/* Using a Fragment as the Router will be in main.tsx */}
+      <ScrollToTop /> {/* Add ScrollToTop here */}
       <Navigation />
       <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}> {/* Wrapper for main content area */}
         <Routes>
@@ -26,7 +28,7 @@ const App: React.FC = () => {
         textAlign: 'center',
         marginTop: 'auto' // Pushes footer to bottom if content is short
       }}>
-        <p>&copy; 2025 maoude. All rights reserved. Higher Ed Management Course.</p>
+        <p>© 2025 maoude. All rights reserved. Higher Ed Management Course.</p>
       </footer>
     </>
   );
