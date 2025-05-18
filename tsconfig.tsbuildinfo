@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/navigation.tsx","./src/pages/homepage.tsx","./src/pages/module1page.tsx","./src/pages/syllabuspage.tsx"],"version":"5.8.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/navigation.tsx","./src/data/module1session1slidedata.ts","./src/pages/homepage.tsx","./src/pages/module1page.tsx","./src/pages/module1session1slidespage.tsx","./src/pages/syllabuspage.tsx"],"version":"5.8.3"}
