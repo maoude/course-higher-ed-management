@@ -4,8 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
-import Module1Page from './pages/Module1Page'; // Import Module1Page
-
+import Module1Page from './pages/Module1Page'; // Import slides page
+import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage';
 const App: React.FC = () => {
   return (
     <> {/* Using a Fragment as the Router will be in main.tsx */}
@@ -14,10 +14,8 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/syllabus" element={<SyllabusPage />} />
-          <Route path="/module/1" element={<Module1Page />} /> {/* Route for Module 1 */}
-          {/* Example for other ModulePages when you add them:
-          <Route path="/modules/:moduleId" element={<ModulePage />} /> 
-          */}
+          <Route path="/module/1" element={<Module1Page />} />
+          <Route path="/module/1/session/1/slides" element={<Module1Session1SlidesPage />} /> {/* Route for slides */}
         </Routes>
       </div>
       <footer style={{
