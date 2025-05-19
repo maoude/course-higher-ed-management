@@ -1,14 +1,14 @@
-// src/pages/Module1Session2SlidesPage.tsx
+// src/pages/Module1Session1SlidesPage.tsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { module1Session2Slides, Slide } from '../data/Module1Session2SlideData'; // Import Session 2 data
+import { module1Session1Slides, Slide } from '../data/Module1Session1SlideData'; // Import slide data
 
-const Module1Session2SlidesPage: React.FC = () => {
+const Module1Session1SlidesPage: React.FC = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const navigate = useNavigate();
 
-  const totalSlides = module1Session2Slides.length;
-  const currentSlide: Slide | undefined = module1Session2Slides[currentSlideIndex];
+  const totalSlides = module1Session1Slides.length;
+  const currentSlide: Slide | undefined = module1Session1Slides[currentSlideIndex];
 
   const goToNextSlide = useCallback(() => {
     setCurrentSlideIndex((prevIndex) => Math.min(prevIndex + 1, totalSlides - 1));
@@ -36,7 +36,7 @@ const Module1Session2SlidesPage: React.FC = () => {
   }, [goToNextSlide, goToPreviousSlide, navigate]);
 
   if (!currentSlide) {
-    return <div className="container">Slide data not found for Session 2.</div>;
+    return <div className="container">Slide data not found.</div>;
   }
 
   return (
@@ -53,13 +53,13 @@ const Module1Session2SlidesPage: React.FC = () => {
       </div>
       <div className="slideshow-controls">
         <button onClick={goToPreviousSlide} disabled={currentSlideIndex === 0}>
-          ← Previous
+          &larr; Previous
         </button>
         <span className="slide-indicator">
           Slide {currentSlideIndex + 1} of {totalSlides}
         </span>
         <button onClick={goToNextSlide} disabled={currentSlideIndex === totalSlides - 1}>
-          Next →
+          Next &rarr;
         </button>
       </div>
        <div style={{ textAlign: 'center', padding: '10px', background: '#e9ecef' }}>
@@ -69,4 +69,4 @@ const Module1Session2SlidesPage: React.FC = () => {
   );
 };
 
-export default Module1Session2SlidesPage;
+export default Module1Session1SlidesPage;

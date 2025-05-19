@@ -8,8 +8,11 @@ import Module1Page from './pages/Module1Page';
 import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage';
 import Module1Session2SlidesPage from './pages/Module1Session2SlidesPage'; // Import Session 2 slides page
 import ScrollToTop from './components/ScrollToTop';
+import { useScrollAnimation } from './hooks/useScrollAnimation'; // Import the scroll animation hook
 
 const App: React.FC = () => {
+  useScrollAnimation(); // Call the hook to enable scroll animations
+
   return (
     <>
       <ScrollToTop />
@@ -24,8 +27,8 @@ const App: React.FC = () => {
         </Routes>
       </div>
       <footer style={{
-        backgroundColor: '#1c3d72',
-        color: '#e0e7ff',
+        backgroundColor: 'var(--clr-accent)', // Use CSS Variable
+        color: 'var(--clr-text-on-dark)',   // Use CSS Variable
         padding: '1.5rem',
         textAlign: 'center',
         marginTop: 'auto'
