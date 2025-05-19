@@ -78,6 +78,7 @@
   --transition-speed-normal: 0.3s;
   --transition-timing: ease-in-out;
 
+  /* Responsive font sizes */
   --font-size-base: clamp(1rem, 1.5vw, 1.15rem);
   --font-size-h1: clamp(2.2em, 6vw, 3.8em);
   --font-size-h2: clamp(1.6em, 4.5vw, 2.4em);
@@ -437,7 +438,7 @@ a.animated-underline:focus::after {
   gap: 1rem;
 }
 .social-links a {
-  color: var(--clr-text-on-dark); /* Nav text color */
+  color: var(--clr-text-on-dark);
   text-decoration: none;
   display: inline-block;
   transition: transform var(--transition-speed-fast) var(--transition-timing),
@@ -445,7 +446,7 @@ a.animated-underline:focus::after {
 }
 .social-links a:hover,
 .social-links a:focus {
-  color: var(--clr-accent-light-variant); /* Lighter accent for hover */
+  color: var(--clr-accent-light-variant);
   transform: scale(1.15);
 }
 .social-links svg {
