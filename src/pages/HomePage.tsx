@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
           Higher Ed Management Course
         </h1>
         <p style={{
-          fontSize: 'clamp(1.1em, 3vw, 1.4em)',
+          fontSize: 'clamp(1.1em, 3vw, 1.4em)', // Keeping responsive size for emphasis
           maxWidth: '700px',
           margin: '0 auto'
         }}>
@@ -35,7 +35,6 @@ const HomePage: React.FC = () => {
           </p>
         </div>
 
-        {/* Meet Your Instructor Section */}
         <section className="instructor-section card animate-on-scroll" style={{ textAlign: 'left', marginTop: '3rem' }}>
           <h2>Meet Your Instructor</h2>
           <h3>Dr. Mohamad Aoude</h3>
@@ -56,5 +55,4 @@ const HomePage: React.FC = () => {
     </div>
   );
 };
-
 export default HomePage;

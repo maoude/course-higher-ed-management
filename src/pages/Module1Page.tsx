@@ -85,7 +85,7 @@ const Module1Page: React.FC = () => {
             </ul>
           </li>
           <li><strong>Submission:</strong> A written analysis (target length: 1000-1500 words) to be submitted electronically via the LMS by the end of the week (e.g., Sunday evening, before the next module begins).</li>
-          <li><strong>Grading:</strong> A detailed rubric will assess the application of Module 1 concepts, analytical depth, clarity, and professionalism.</li>
+          <li><strong>Grading:</strong> A detailed rubric will assess the application of Module 1 concepts, analytical D:\dev\higher_edv2\src\index.cssdepth, clarity, and professionalism.</li>
         </ul>
       </div>
     </div>

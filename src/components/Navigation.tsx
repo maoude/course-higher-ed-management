@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// SVG Icon Components (can be moved to separate files if preferred)
+// SVG Icon Components
 const LinkedInIcon = () => (
   <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065s.919-2.064 2.063-2.064 2.064.925 2.064 2.064-.92 2.065-2.064 2.065zm1.776 13.019H3.561V9h3.552v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
     <nav style={{
       backgroundColor: 'var(--clr-accent)',
       padding: '1rem 2rem',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      boxShadow: 'var(--shadow-sm)', // Using CSS variable
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center'
@@ -44,7 +44,7 @@ const Navigation: React.FC = () => {
             to="/"
             className="animated-underline"
             style={{
-              color: 'var(--clr-text-light)',
+              color: 'var(--clr-text-on-dark)', // Using CSS variable
               textDecoration: 'none',
               fontSize: '1.1rem',
               fontWeight: 'bold',
@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
             to="/syllabus"
             className="animated-underline"
             style={{
-              color: 'var(--clr-text-light)',
+              color: 'var(--clr-text-on-dark)', // Using CSS variable
               textDecoration: 'none',
               fontSize: '1.1rem',
               fontWeight: 'bold',
