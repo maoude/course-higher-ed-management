@@ -6,26 +6,23 @@ const HomePage: React.FC = () => {
     <div className="container" style={{
       paddingTop: '2rem',
       paddingBottom: '2rem',
-      textAlign: 'center' 
+      textAlign: 'center'
     }}>
       <header style={{ marginBottom: '40px', maxWidth: '750px', margin: '0 auto 40px auto' }}>
-        <h1 style={{ // Using global h1 styles now, specific overrides if needed
-          margin: '0 0 15px 0',
-          lineHeight: '1.2'
-        }}>
+        <h1> {/* Using global h1 styles now */}
           Higher Ed Management Course
         </h1>
-        <p style={{ // Using global p styles now
-          fontSize: 'clamp(1.1em, 3vw, 1.4em)', // Keeping responsive size
+        <p style={{ 
+          fontSize: 'clamp(1.1em, 3vw, 1.4em)', 
           maxWidth: '700px',
-          margin: '0 auto' 
+          margin: '0 auto'
         }}>
           Navigating the Future of Education Leadership & Innovation
         </p>
       </header>
 
       <main>
-        <div className="card animate-on-scroll"> {/* Welcome card with animation class */}
+        <div className="card animate-on-scroll">
           <h2> {/* Using global h2 styles */}
             Welcome Aboard!
           </h2>

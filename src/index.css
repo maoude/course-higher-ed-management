@@ -12,7 +12,7 @@
 
   --clr-text-body: #343a40; /* Main text color */
   --clr-text-headings: #212529; /* Slightly darker for headings */
-  --clr-text-light: #f8f9fa; /* For text on dark backgrounds */
+  --clr-text-light: #ffffff; /* For text on dark backgrounds (e.g., nav) */
   --clr-text-muted: #6c757d; /* For less important text */
 
   --bg-light: #f8f9fa;    /* Main page background */
@@ -37,17 +37,17 @@
 
   /* Responsive font sizes */
   --font-size-base: clamp(1rem, 1.5vw, 1.15rem);
-  --font-size-h1: clamp(2.2em, 6vw, 3.8em);
-  --font-size-h2: clamp(1.6em, 4.5vw, 2.4em);
-  --font-size-h3: clamp(1.4em, 3.5vw, 2em);
-  --font-size-h4: clamp(1.2em, 3vw, 1.75em);
+  --font-size-h1: clamp(2.2em, 6vw, 3.8em); /* Main page title */
+  --font-size-h2: clamp(1.6em, 4.5vw, 2.4em); /* Section titles */
+  --font-size-h3: clamp(1.4em, 3.5vw, 2em);   /* Sub-section titles */
+  --font-size-h4: clamp(1.2em, 3vw, 1.75em); /* Smaller headings */
 }
 
 /* Basic Dark Mode Theme (activate by adding data-theme="dark" to <html> or <body>) */
 [data-theme="dark"] {
-  --clr-primary: #90caf9; /* Lighter blue for dark mode links */
+  --clr-primary: #90caf9; 
   --clr-primary-dark: #e3f2fd;
-  --clr-accent: #bb86fc; /* Example accent for dark mode */
+  --clr-accent: #bb86fc; 
   --clr-accent-medium: #9e6dd4;
   --clr-accent-light: #3e275a;
 
@@ -56,8 +56,8 @@
   --clr-text-light: #121212;
   --clr-text-muted: #9e9e9e;
 
-  --bg-light: #121212;    /* Dark page background */
-  --bg-white: #1e1e1e;    /* Dark card background */
+  --bg-light: #121212;    
+  --bg-white: #1e1e1e;    
   --bg-instructor: #2c2c2c;
   --bg-controls: var(--clr-accent-medium);
 
@@ -190,26 +190,26 @@ a.animated-underline:focus::after {
 .text-center { text-align: center; }
 .mt-2 { margin-top: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
-.rounded { border-radius: var(--border-radius-md); } /* Example using variable */
-.shadow-lg { box-shadow: var(--shadow-lg); }
+.rounded { border-radius: var(--border-radius-md); }
+.shadow-lg-util { box-shadow: var(--shadow-lg); } /* Renamed to avoid conflict if .shadow-lg is used differently */
 
 
 /* Card, Content Section, Instructor Section Styling with Hover Effects */
 .card,
 .content-section,
-.instructor-section.card /* Apply to instructor if it also has .card */ {
+.instructor-section { /* Applied general hover to instructor-section too */
   background-color: var(--bg-white);
   border: 1px solid var(--border-light);
-  border-radius: var(--border-radius-md); /* Using md for a slightly larger radius */
+  border-radius: var(--border-radius-md);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-speed-normal) var(--transition-timing), 
+  transition: transform var(--transition-speed-normal) var(--transition-timing),
               box-shadow var(--transition-speed-normal) var(--transition-timing);
 }
 .card:hover, .card:focus-within,
 .content-section:hover, .content-section:focus-within,
-.instructor-section.card:hover, .instructor-section.card:focus-within {
+.instructor-section:hover, .instructor-section:focus-within {
   transform: translateY(-5px) scale(1.01);
   box-shadow: var(--shadow-xl);
 }
@@ -224,7 +224,7 @@ a.animated-underline:focus::after {
     color: var(--clr-accent);
 }
 
-.content-section h3 { /* Already defined, ensure it uses variables if needed */
+.content-section h3 {
     color: var(--clr-accent-medium);
     border-bottom: 2px solid var(--clr-accent-light);
 }
@@ -252,21 +252,17 @@ a.animated-underline:focus::after {
     transform: translateX(3px);
 }
 
-.instructor-section { /* Specific styling for instructor section if not using .card directly */
+.instructor-section { 
     background-color: var(--bg-instructor);
     border-left: 5px solid var(--clr-accent);
-    padding: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: var(--border-radius-md);
-    /* Apply card hover effects if desired, or keep separate */
+    /* padding, margin-top, margin-bottom, border-radius already in the common group */
 }
 .instructor-section h2 {
     color: var(--clr-accent);
-    font-size: var(--font-size-h2); /* Using clamp from variables */
+    font-size: var(--font-size-h2);
 }
 .instructor-section p {
-    color: var(--clr-text-body); /* Ensure it uses body text color or a slightly darker one */
+    color: var(--clr-text-body); 
 }
 .instructor-section strong {
     color: var(--clr-text-headings);
@@ -278,10 +274,10 @@ a.animated-underline:focus::after {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 120px);
-  width: 80%;
-  max-width: 1200px;
-  min-width: 300px;
-  margin: 20px auto;
+  width: 80%;                  
+  max-width: 1200px;           
+  min-width: 320px;            
+  margin: 20px auto;           
   background-color: var(--bg-white);
   box-shadow: var(--shadow-lg);
   border-radius: var(--border-radius-md);
@@ -289,18 +285,18 @@ a.animated-underline:focus::after {
 }
 @media (max-width: 768px) {
   .slideshow-container {
-    width: 95%;
-    height: calc(100vh - 80px); /* Adjust height for smaller screens */
+    width: 95%; 
+    height: calc(100vh - 80px); 
     margin: 10px auto;
   }
   .slide-content-wrapper {
     padding: 20px;
   }
-  .slide-title {
-    font-size: 1.5rem !important; /* Using clamp might be better */
+  .slide-title { /* Targeting specific slide title */
+    font-size: 1.4rem !important; 
   }
-  .slide-subtitle {
-    font-size: 1.1rem !important;
+  .slide-subtitle { /* Targeting specific slide subtitle */
+    font-size: 1rem !important;
   }
   .slideshow-controls button {
     padding: 8px 15px;
@@ -321,18 +317,18 @@ a.animated-underline:focus::after {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border-light);
 }
-.slide-title {
-    font-size: var(--font-size-h2); /* Using clamp from variables */
+.slide-title { /* General slide title (not global H1/H2) */
+    font-size: 2rem; 
     color: var(--clr-accent);
     margin-bottom: 5px;
 }
-.slide-subtitle {
-    font-size: var(--font-size-h4); /* Using clamp from variables */
+.slide-subtitle { /* General slide subtitle */
+    font-size: 1.3rem; 
     color: var(--clr-primary);
     font-weight: normal;
 }
 .slide-actual-content {
-    font-size: 1.1rem; /* Base size for slide text */
+    font-size: 1.1rem; 
 }
 .slide-actual-content h1,
 .slide-actual-content h2,
@@ -343,8 +339,7 @@ a.animated-underline:focus::after {
     margin-bottom: 0.5rem;
     line-height: 1.3;
 }
-/* More specific font sizes for headings within slides */
-.slide-actual-content h1 { font-size: 1.8em; }
+.slide-actual-content h1 { font-size: 1.8em; } 
 .slide-actual-content h2 { font-size: 1.5em; }
 .slide-actual-content h3 { font-size: 1.3em; }
 
@@ -405,7 +400,7 @@ a.animated-underline:focus::after {
   color: var(--clr-text-light);
   text-decoration: none;
   display: inline-block;
-  transition: transform var(--transition-speed-fast) var(--transition-timing), 
+  transition: transform var(--transition-speed-fast) var(--transition-timing),
               color var(--transition-speed-fast) var(--transition-timing);
 }
 .social-links a:hover,
@@ -421,16 +416,16 @@ a.animated-underline:focus::after {
 
 /* Feedback messages */
 .feedback-correct {
-  background-color: #d1e7dd; /* Bootstrap success background */
-  color: #0f5132;      /* Bootstrap success text */
+  background-color: #d1e7dd; 
+  color: #0f5132;      
   padding: 1rem;
   border: 1px solid #badbcc;
   border-radius: var(--border-radius-sm);
   margin-bottom: 1rem;
 }
 .feedback-incorrect {
-  background-color: #f8d7da; /* Bootstrap danger background */
-  color: #842029;      /* Bootstrap danger text */
+  background-color: #f8d7da; 
+  color: #842029;      
   padding: 1rem;
   border: 1px solid #f5c2c7;
   border-radius: var(--border-radius-sm);
@@ -451,7 +446,7 @@ details summary {
   cursor: pointer;
   padding: 0.75rem 0.5rem;
   color: var(--clr-accent-medium);
-  outline: none; /* Remove default focus outline if custom is preferred */
+  outline: none; 
 }
 details summary:hover, details summary:focus {
     background-color: var(--clr-accent-light);
@@ -459,15 +454,16 @@ details summary:hover, details summary:focus {
 details[open] summary {
     border-bottom: 1px solid var(--border-light);
 }
-details > div { /* Assuming content is wrapped in a div */
+details > div { 
     padding: 1rem;
 }
 
 
 /* Example Button (can be applied to actual buttons) */
+.button, /* General button class */
 .button-example {
   background-color: var(--clr-primary);
-  color: var(--clr-text-light);
+  color: var(--clr-text-light) !important; /* Ensure text is light */
   border: none;
   padding: 10px 20px;
   border-radius: var(--border-radius-sm);
@@ -476,16 +472,20 @@ details > div { /* Assuming content is wrapped in a div */
   font-weight: bold;
   text-align: center;
   display: inline-block;
+  text-decoration: none; /* Remove underline from link-styled buttons */
   transition: background-color var(--transition-speed-fast) var(--transition-timing),
               transform var(--transition-speed-fast) var(--transition-timing),
               box-shadow var(--transition-speed-fast) var(--transition-timing);
 }
+.button:hover, .button:focus,
 .button-example:hover, .button-example:focus {
   background-color: var(--clr-primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  text-decoration: none; /* Remove underline from link-styled buttons on hover */
+  color: var(--clr-text-light) !important; /* Ensure text remains light on hover */
+  text-decoration: none; 
 }
+.button:active,
 .button-example:active {
   transform: translateY(0px) scale(0.98);
   box-shadow: var(--shadow-sm);

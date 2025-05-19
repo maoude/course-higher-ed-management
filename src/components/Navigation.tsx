@@ -24,12 +24,12 @@ const GitHubIcon = () => (
 const Navigation: React.FC = () => {
   return (
     <nav style={{
-      backgroundColor: 'var(--clr-accent)', 
+      backgroundColor: 'var(--clr-accent)',
       padding: '1rem 2rem',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      display: 'flex', 
-      justifyContent: 'space-between', 
-      alignItems: 'center' 
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
     }}>
       <ul style={{
         listStyle: 'none',
@@ -42,16 +42,13 @@ const Navigation: React.FC = () => {
         <li>
           <Link
             to="/"
-            className="animated-underline" // Added class for animation
+            className="animated-underline"
             style={{
-              color: 'var(--clr-text-light)', // Using CSS variable
+              color: 'var(--clr-text-light)',
               textDecoration: 'none',
               fontSize: '1.1rem',
               fontWeight: 'bold',
-              // transition: 'color 0.2s ease' // Transition handled by animated-underline
             }}
-            // onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'var(--clr-accent-light)'}
-            // onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'var(--clr-text-light)'}
           >
             Home
           </Link>
@@ -59,16 +56,13 @@ const Navigation: React.FC = () => {
         <li>
           <Link
             to="/syllabus"
-            className="animated-underline" // Added class for animation
+            className="animated-underline"
             style={{
-              color: 'var(--clr-text-light)', // Using CSS variable
+              color: 'var(--clr-text-light)',
               textDecoration: 'none',
               fontSize: '1.1rem',
               fontWeight: 'bold',
-              // transition: 'color 0.2s ease' // Transition handled by animated-underline
             }}
-            // onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'var(--clr-accent-light)'}
-            // onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => e.currentTarget.style.color = 'var(--clr-text-light)'}
           >
             Syllabus
           </Link>
@@ -78,7 +72,7 @@ const Navigation: React.FC = () => {
         <a href="[https://www.linkedin.com/in/mohamad-aoude-4aba1270/](https://www.linkedin.com/in/mohamad-aoude-4aba1270/)" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
-        <a href="[https://www.youtube.com/@dr.mohamadaoude1375](https://www.youtube.com/@dr.mohamadaoude1375)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Replace with your actual YouTube channel URL */}
+        <a href="[https://www.youtube.com/@yourchannel](https://www.youtube.com/@yourchannel)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Replace with your actual YouTube channel URL */}
           <YouTubeIcon />
         </a>
         <a href="[https://github.com/maoude/](https://github.com/maoude/)" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
