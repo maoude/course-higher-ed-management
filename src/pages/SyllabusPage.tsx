@@ -1,6 +1,6 @@
 // src/pages/SyllabusPage.tsx
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const SyllabusPage: React.FC = () => {
   return (

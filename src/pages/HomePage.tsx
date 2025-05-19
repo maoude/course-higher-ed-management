@@ -12,8 +12,8 @@ const HomePage: React.FC = () => {
         <h1> {/* Using global h1 styles now */}
           Higher Ed Management Course
         </h1>
-        <p style={{ 
-          fontSize: 'clamp(1.1em, 3vw, 1.4em)', 
+        <p style={{
+          fontSize: 'clamp(1.1em, 3vw, 1.4em)',
           maxWidth: '700px',
           margin: '0 auto'
         }}>

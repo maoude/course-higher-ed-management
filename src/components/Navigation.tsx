@@ -72,7 +72,7 @@ const Navigation: React.FC = () => {
         <a href="[https://www.linkedin.com/in/mohamad-aoude-4aba1270/](https://www.linkedin.com/in/mohamad-aoude-4aba1270/)" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
-        <a href="[https://www.youtube.com/@yourchannel](https://www.youtube.com/@yourchannel)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Replace with your actual YouTube channel URL */}
+        <a href="[https://www.youtube.com/@your-channel-name](https://www.youtube.com/@your-channel-name)" target="_blank" rel="noopener noreferrer" aria-label="YouTube"> {/* Replace with your actual YouTube channel URL */}
           <YouTubeIcon />
         </a>
         <a href="[https://github.com/maoude/](https://github.com/maoude/)" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

@@ -1,6 +1,6 @@
 // src/pages/Module1Page.tsx
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Module1Page: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ const Module1Page: React.FC = () => {
         <p style={{ marginTop: '1rem' }}>
           <Link to="/module/1/session/1/slides" className="font-semibold animated-underline">
             View Session 1 Lecture Slides
-            <span className="module-link-icon" aria-hidden="true"> 📰</span> 
+            <span className="module-link-icon" aria-hidden="true"> 📰</span>
           </Link>
         </p>
         <p><strong>Learning Activities & Exercises (to be completed between Session 1 and Session 2):</strong></p>
@@ -57,7 +57,7 @@ const Module1Page: React.FC = () => {
         <p style={{ marginTop: '1rem' }}>
           <Link to="/module/1/session/2/slides" className="font-semibold animated-underline">
             View Session 2 Lecture Slides
-            <span className="module-link-icon" aria-hidden="true"> 📰</span> 
+            <span className="module-link-icon" aria-hidden="true"> 📰</span>
           </Link>
         </p>
         <p><strong>Learning Activities & Exercises (to be completed after Session 2):</strong></p>
