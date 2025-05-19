@@ -1,6 +1,6 @@
 // src/pages/Module1Page.tsx
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 
 const Module1Page: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Module1Page: React.FC = () => {
         <h1>Module 1: Foundations of Institutional Higher Education Management</h1>
       </header>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <p><strong>Duration:</strong> 1 Week (2 Sessions)</p>
         <h3>Overall Module Learning Outcomes</h3>
         <p>Upon completing this module, students will be able to:</p>
@@ -22,7 +22,7 @@ const Module1Page: React.FC = () => {
         </ul>
       </div>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Session 1: The Landscape and Legacy of Higher Education</h3>
         <p><strong>Topics Covered:</strong></p>
         <ul>
@@ -32,9 +32,9 @@ const Module1Page: React.FC = () => {
           <li>Types of Institutions and Their Missions (e.g., Public Research Universities, Private Liberal Arts Colleges, Community Colleges, For-Profit Institutions, Minority-Serving Institutions).</li>
         </ul>
         <p style={{ marginTop: '1rem' }}>
-          <Link to="/module/1/session/1/slides" className="font-semibold">
+          <Link to="/module/1/session/1/slides" className="font-semibold animated-underline">
             View Session 1 Lecture Slides
-            <span className="module-link-icon" aria-hidden="true"> 📰</span> {/* Newspaper icon as placeholder */}
+            <span className="module-link-icon" aria-hidden="true"> 📰</span> 
           </Link>
         </p>
         <p><strong>Learning Activities & Exercises (to be completed between Session 1 and Session 2):</strong></p>
@@ -45,7 +45,7 @@ const Module1Page: React.FC = () => {
         </ol>
       </div>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Session 2: Organizing for Success - Theories, Players, and Challenges</h3>
         <p><strong>Topics Covered:</strong></p>
         <ul>
@@ -55,9 +55,9 @@ const Module1Page: React.FC = () => {
           <li>Introduction to Case Study 1: "Understanding Institutional Identity and Mission."</li>
         </ul>
         <p style={{ marginTop: '1rem' }}>
-          <Link to="/module/1/session/2/slides" className="font-semibold">
+          <Link to="/module/1/session/2/slides" className="font-semibold animated-underline">
             View Session 2 Lecture Slides
-            <span className="module-link-icon" aria-hidden="true"> 📰</span> {/* Newspaper icon as placeholder */}
+            <span className="module-link-icon" aria-hidden="true"> 📰</span> 
           </Link>
         </p>
         <p><strong>Learning Activities & Exercises (to be completed after Session 2):</strong></p>
@@ -70,7 +70,7 @@ const Module1Page: React.FC = () => {
         </ol>
       </div>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Case Study 1: Understanding Institutional Identity and Mission</h3>
         <ul>
           <li><strong>Structure & Content (as previously detailed, adapted for weekly submission):</strong>

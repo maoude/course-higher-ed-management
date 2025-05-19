@@ -1,6 +1,6 @@
 // src/pages/SyllabusPage.tsx
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 
 const SyllabusPage: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const SyllabusPage: React.FC = () => {
         <h1>Syllabus: Managing Institutional Higher Education</h1>
       </header>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Course Overview</h3>
         <p><strong>Course Title:</strong> Managing Institutional Higher Education</p>
         <p>
@@ -24,7 +24,7 @@ const SyllabusPage: React.FC = () => {
         <p><strong>Course Format:</strong> This is a 10-module online course. Each module will consist of readings, lecture materials (structured around 2 sessions per week), interactive discussions, and a case study assignment designed to apply learned concepts to real-world or simulated higher education scenarios.</p>
       </div>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Course Learning Objectives</h3>
         <p>Upon successful completion of this course, students will be able to:</p>
         <ul>
@@ -41,14 +41,14 @@ const SyllabusPage: React.FC = () => {
         </ul>
       </div>
 
-      <div className="content-section">
+      <div className="content-section animate-on-scroll">
         <h3>Course Modules Overview</h3>
         <p>This course is structured into 10 modules. Each module page will provide a detailed plan including topics for two sessions per week, learning activities, and a case study.</p>
         <ul>
           <li>
-            <Link to="/module/1">
+            <Link to="/module/1" className="animated-underline">
               <strong>Module 1:</strong> Foundations of Institutional Higher Education Management
-              <span className="module-link-icon" aria-hidden="true">&rarr;</span>
+              <span className="module-link-icon" aria-hidden="true">→</span>
             </Link>
           </li>
           <li><strong>Module 2:</strong> Governance Structures and Stakeholders in Higher Education</li>

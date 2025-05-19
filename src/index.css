@@ -1,6 +1,77 @@
 /* src/index.css */
 
-/* Modern CSS Reset (inspired by Andy Bell's reset) */
+:root {
+  --font-primary: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Merriweather', Georgia, serif;
+
+  --clr-primary: #0056b3; /* Main interactive color (links, buttons) */
+  --clr-primary-dark: #003d80;
+  --clr-accent: #1c3d72; /* Deeper blue for headers, accents */
+  --clr-accent-medium: #1e40af;
+  --clr-accent-light: #e0e7ff;
+
+  --clr-text-body: #343a40; /* Main text color */
+  --clr-text-headings: #212529; /* Slightly darker for headings */
+  --clr-text-light: #f8f9fa; /* For text on dark backgrounds */
+  --clr-text-muted: #6c757d; /* For less important text */
+
+  --bg-light: #f8f9fa;    /* Main page background */
+  --bg-white: #ffffff;    /* Card, content section background */
+  --bg-instructor: #e9ecef; /* Instructor section background */
+  --bg-controls: var(--clr-accent); /* Slideshow controls background */
+
+  --border-light: #dee2e6;
+  --border-accent: var(--clr-accent);
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.075);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 20px rgba(0,0,0,0.12);
+  --shadow-xl: 0 10px 30px rgba(0, 0, 0, 0.1); /* For hover effects */
+
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 8px;
+
+  --transition-speed-fast: 0.2s;
+  --transition-speed-normal: 0.3s;
+  --transition-timing: ease-in-out;
+
+  /* Responsive font sizes */
+  --font-size-base: clamp(1rem, 1.5vw, 1.15rem);
+  --font-size-h1: clamp(2.2em, 6vw, 3.8em);
+  --font-size-h2: clamp(1.6em, 4.5vw, 2.4em);
+  --font-size-h3: clamp(1.4em, 3.5vw, 2em);
+  --font-size-h4: clamp(1.2em, 3vw, 1.75em);
+}
+
+/* Basic Dark Mode Theme (activate by adding data-theme="dark" to <html> or <body>) */
+[data-theme="dark"] {
+  --clr-primary: #90caf9; /* Lighter blue for dark mode links */
+  --clr-primary-dark: #e3f2fd;
+  --clr-accent: #bb86fc; /* Example accent for dark mode */
+  --clr-accent-medium: #9e6dd4;
+  --clr-accent-light: #3e275a;
+
+  --clr-text-body: #e0e0e0;
+  --clr-text-headings: #ffffff;
+  --clr-text-light: #121212;
+  --clr-text-muted: #9e9e9e;
+
+  --bg-light: #121212;    /* Dark page background */
+  --bg-white: #1e1e1e;    /* Dark card background */
+  --bg-instructor: #2c2c2c;
+  --bg-controls: var(--clr-accent-medium);
+
+  --border-light: #424242;
+  --border-accent: var(--clr-accent);
+
+  --shadow-sm: 0 2px 10px rgba(255,255,255,0.05);
+  --shadow-md: 0 4px 12px rgba(255,255,255,0.06);
+  --shadow-lg: 0 8px 20px rgba(255,255,255,0.07);
+  --shadow-xl: 0 10px 30px rgba(255,255,255,0.08);
+}
+
+
+/* Modern CSS Reset */
 *,
 *::before,
 *::after {
@@ -11,7 +82,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
 }
 
 body, h1, h2, h3, h4, p,
@@ -28,251 +99,296 @@ ol[role='list'] {
 
 body {
   min-height: 100vh;
-  line-height: 1.6; /* Improved readability */
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; /* Lato as primary, good fallbacks */
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  background-color: var(--bg-light);
+  color: var(--clr-text-body);
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa; /* Lighter, softer background */
-  color: #343a40; /* Dark grey for good contrast */
-  display: flex; /* For footer positioning if needed */
-  flex-direction: column; /* For footer positioning */
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
-
-input,
-button,
-textarea,
-select {
+input, button, textarea, select {
   font: inherit;
 }
-
 p, li, dt, dd, label, caption, span, small {
-    line-height: 1.7; /* Consistent line height for text elements */
+    line-height: 1.7;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', Georgia, serif; /* Merriweather for headings, good fallbacks */
-  color: #212529; /* Slightly darker for headings */
-  margin-bottom: 0.75rem; /* Consistent bottom margin */
+  font-family: var(--font-heading);
+  color: var(--clr-text-headings);
+  margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
 
 p {
   margin-bottom: 1rem;
 }
 
 a {
-  color: #0056b3; /* A more standard, accessible blue */
+  color: var(--clr-primary);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color var(--transition-speed-fast) var(--transition-timing);
 }
-
-a:hover,
-a:focus {
-  color: #003d80; /* Darker blue on hover/focus */
+a:hover, a:focus {
+  color: var(--clr-primary-dark);
   text-decoration: underline;
 }
 
-/* Main application root */
-#root {
-  flex-grow: 1; /* Allows footer to stick to bottom if content is short */
-  display: flex;
-  flex-direction: column;
-  width: 100%; /* Ensure it takes full width */
+a.animated-underline {
+  position: relative;
+}
+a.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--clr-primary-dark);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+a.animated-underline:hover::after,
+a.animated-underline:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-/* Utility classes (optional, can be expanded) */
+
+/* Main application root */
+#root {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Utility classes */
 .container {
   width: 90%;
-  max-width: 1140px; /* Common max-width for content */
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.rounded { border-radius: var(--border-radius-md); } /* Example using variable */
+.shadow-lg { box-shadow: var(--shadow-lg); }
 
-/* Basic card styling (example) */
-.card {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 0.375rem; /* Softer corners */
+
+/* Card, Content Section, Instructor Section Styling with Hover Effects */
+.card,
+.content-section,
+.instructor-section.card /* Apply to instructor if it also has .card */ {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-md); /* Using md for a slightly larger radius */
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.075);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-speed-normal) var(--transition-timing), 
+              box-shadow var(--transition-speed-normal) var(--transition-timing);
+}
+.card:hover, .card:focus-within,
+.content-section:hover, .content-section:focus-within,
+.instructor-section.card:hover, .instructor-section.card:focus-within {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: var(--shadow-xl);
 }
 
-/* Styles for Syllabus Page and Module Pages */
+/* Specific section styles */
 .page-header {
     margin-bottom: 2rem;
-    border-bottom: 2px solid #1c3d72; /* Deep blue accent */
+    border-bottom: 2px solid var(--clr-accent);
     padding-bottom: 1rem;
 }
 .page-header h1 {
-    color: #1c3d72; /* Deep blue for main page titles */
+    color: var(--clr-accent);
 }
 
-.content-section { /* Replaces syllabus-section and can be used for modules */
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.content-section h3 {
-    color: #1e40af; /* Medium blue for section titles */
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #e0e7ff; /* Light blue underline */
-    padding-bottom: 0.5rem;
+.content-section h3 { /* Already defined, ensure it uses variables if needed */
+    color: var(--clr-accent-medium);
+    border-bottom: 2px solid var(--clr-accent-light);
 }
 .content-section ul {
-    list-style-type: disc; /* Standard disc for unordered lists */
+    list-style-type: disc;
     list-style-position: inside;
-    padding-left: 0.5rem; /* Adjust as needed */
+    padding-left: 0.5rem;
 }
-.content-section ul li {
-    margin-bottom: 0.5rem;
-}
-.content-section ol { /* Styles for ordered lists */
+.content-section ul li { margin-bottom: 0.5rem; }
+.content-section ol {
     list-style-type: decimal;
     list-style-position: inside;
     padding-left: 0.5rem;
 }
-.content-section ol li {
-    margin-bottom: 0.5rem;
-}
+.content-section ol li { margin-bottom: 0.5rem; }
+
 .module-link-icon {
     display: inline-block;
     margin-left: 8px;
-    color: #0056b3; /* Link color */
+    color: var(--clr-primary);
     font-weight: bold;
-    transition: transform 0.2s ease-in-out;
+    transition: transform var(--transition-speed-fast) var(--transition-timing);
 }
 .module-link-icon:hover {
     transform: translateX(3px);
 }
 
-/* Styles for Instructor Section */
-.instructor-section {
-    background-color: #e9ecef; /* A slightly different, light background */
-    border-left: 5px solid #1c3d72; /* Accent border */
+.instructor-section { /* Specific styling for instructor section if not using .card directly */
+    background-color: var(--bg-instructor);
+    border-left: 5px solid var(--clr-accent);
     padding: 2rem;
-    margin-top: 2rem; /* Space above this section */
-    margin-bottom: 2rem; /* Space below this section */
-    border-radius: 8px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius-md);
+    /* Apply card hover effects if desired, or keep separate */
 }
 .instructor-section h2 {
-    color: #1c3d72; /* Deep blue for the heading */
-    margin-bottom: 1.5rem;
-    font-size: clamp(1.8em, 5vw, 2.6em);
+    color: var(--clr-accent);
+    font-size: var(--font-size-h2); /* Using clamp from variables */
 }
 .instructor-section p {
-    color: #495057; /* Darker grey for readability */
-    font-size: clamp(1em, 2.5vw, 1.1em);
-    line-height: 1.75;
-    margin-bottom: 1rem;
+    color: var(--clr-text-body); /* Ensure it uses body text color or a slightly darker one */
 }
 .instructor-section strong {
-    color: #212529;
+    color: var(--clr-text-headings);
 }
+
 
 /* Slideshow Styles */
 .slideshow-container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px); /* Adjust based on nav/footer height */
-  max-width: 1000px;
+  height: calc(100vh - 120px);
+  width: 80%;
+  max-width: 1200px;
+  min-width: 300px;
   margin: 20px auto;
-  background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius-md);
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .slideshow-container {
+    width: 95%;
+    height: calc(100vh - 80px); /* Adjust height for smaller screens */
+    margin: 10px auto;
+  }
+  .slide-content-wrapper {
+    padding: 20px;
+  }
+  .slide-title {
+    font-size: 1.5rem !important; /* Using clamp might be better */
+  }
+  .slide-subtitle {
+    font-size: 1.1rem !important;
+  }
+  .slideshow-controls button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
 
 .slide-content-wrapper {
   flex-grow: 1;
   padding: 30px 40px;
   overflow-y: auto;
-  position: relative; /* For absolute positioning of slide if needed */
+  position: relative;
 }
 
 .slide-header {
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-light);
 }
 .slide-title {
-    font-size: 2rem; /* Adjusted from inline */
-    color: #1c3d72;
+    font-size: var(--font-size-h2); /* Using clamp from variables */
+    color: var(--clr-accent);
     margin-bottom: 5px;
 }
 .slide-subtitle {
-    font-size: 1.3rem; /* Adjusted from inline */
-    color: #0056b3;
+    font-size: var(--font-size-h4); /* Using clamp from variables */
+    color: var(--clr-primary);
     font-weight: normal;
 }
 .slide-actual-content {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Base size for slide text */
 }
 .slide-actual-content h1,
 .slide-actual-content h2,
 .slide-actual-content h3 {
+    font-family: var(--font-heading);
+    color: var(--clr-text-headings);
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #2c3e50; /* Darker for content headings */
+    line-height: 1.3;
 }
+/* More specific font sizes for headings within slides */
 .slide-actual-content h1 { font-size: 1.8em; }
 .slide-actual-content h2 { font-size: 1.5em; }
 .slide-actual-content h3 { font-size: 1.3em; }
 
-.slide-actual-content ul, .slide-actual-content ol {
-    margin-left: 20px; /* Indent lists within slide content */
+.slide-actual-content p {
+    font-family: var(--font-primary);
     margin-bottom: 1rem;
 }
+.slide-actual-content ul, .slide-actual-content ol {
+    margin-left: 20px;
+    margin-bottom: 1rem;
+    padding-left: 1.5em;
+}
+.slide-actual-content ul { list-style-type: disc; }
+.slide-actual-content ol { list-style-type: decimal; }
 .slide-actual-content ul li, .slide-actual-content ol li {
     margin-bottom: 0.5rem;
 }
-
+.slide-actual-content strong { font-weight: bold; }
+.slide-actual-content em { font-style: italic; }
 
 .slideshow-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #1c3d72; /* Deep blue */
-  color: white;
+  background-color: var(--bg-controls);
+  color: var(--clr-text-light);
 }
 .slideshow-controls button {
-  background-color: #0056b3; /* Medium blue */
-  color: white;
+  background-color: var(--clr-primary);
+  color: var(--clr-text-light);
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-speed-fast) var(--transition-timing);
 }
 .slideshow-controls button:disabled {
-  background-color: #6c757d; /* Grey out disabled buttons */
+  background-color: var(--clr-text-muted);
   cursor: not-allowed;
 }
 .slideshow-controls button:not(:disabled):hover {
-  background-color: #003d80; /* Darker blue on hover */
+  background-color: var(--clr-primary-dark);
 }
 .slide-indicator {
   font-size: 0.9rem;
@@ -280,24 +396,117 @@ a:focus {
 
 /* Social Media Icons in Nav */
 .social-links {
-  margin-left: auto; /* Pushes social links to the right */
+  margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between icons */
+  gap: 1rem;
 }
 .social-links a {
-  color: #ffffff; /* White icons */
+  color: var(--clr-text-light);
   text-decoration: none;
-  display: inline-block; /* Allows transform */
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: inline-block;
+  transition: transform var(--transition-speed-fast) var(--transition-timing), 
+              color var(--transition-speed-fast) var(--transition-timing);
 }
 .social-links a:hover,
 .social-links a:focus {
-  color: #a7c7e7; /* Lighter blue on hover */
-  transform: scale(1.15); /* Slightly enlarge icon on hover */
+  color: var(--clr-accent-light);
+  transform: scale(1.15);
 }
 .social-links svg {
-  width: 24px; /* Adjust size as needed */
+  width: 24px;
   height: 24px;
-  fill: currentColor; /* Makes SVG color match the 'a' tag's color */
+  fill: currentColor;
+}
+
+/* Feedback messages */
+.feedback-correct {
+  background-color: #d1e7dd; /* Bootstrap success background */
+  color: #0f5132;      /* Bootstrap success text */
+  padding: 1rem;
+  border: 1px solid #badbcc;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1rem;
+}
+.feedback-incorrect {
+  background-color: #f8d7da; /* Bootstrap danger background */
+  color: #842029;      /* Bootstrap danger text */
+  padding: 1rem;
+  border: 1px solid #f5c2c7;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1rem;
+}
+
+/* Details element styling */
+details {
+  margin: 1rem 0;
+  border-left: 4px solid var(--clr-primary);
+  padding-left: 1rem;
+  background-color: var(--bg-white);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  box-shadow: var(--shadow-sm);
+}
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.75rem 0.5rem;
+  color: var(--clr-accent-medium);
+  outline: none; /* Remove default focus outline if custom is preferred */
+}
+details summary:hover, details summary:focus {
+    background-color: var(--clr-accent-light);
+}
+details[open] summary {
+    border-bottom: 1px solid var(--border-light);
+}
+details > div { /* Assuming content is wrapped in a div */
+    padding: 1rem;
+}
+
+
+/* Example Button (can be applied to actual buttons) */
+.button-example {
+  background-color: var(--clr-primary);
+  color: var(--clr-text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  transition: background-color var(--transition-speed-fast) var(--transition-timing),
+              transform var(--transition-speed-fast) var(--transition-timing),
+              box-shadow var(--transition-speed-fast) var(--transition-timing);
+}
+.button-example:hover, .button-example:focus {
+  background-color: var(--clr-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none; /* Remove underline from link-styled buttons on hover */
+}
+.button-example:active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0; /* Start hidden if JS will add 'is-visible' */
+}
+
+.animate-on-scroll.is-visible { /* This class would be added by JavaScript on scroll */
+  animation: fadeInUp 0.6s ease-out forwards;
 }
