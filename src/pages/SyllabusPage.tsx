@@ -1,6 +1,5 @@
 // src/pages/SyllabusPage.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const SyllabusPage: React.FC = () => {
   return (
@@ -46,12 +45,17 @@ const SyllabusPage: React.FC = () => {
         <p>This course is structured into 10 modules. Each module page will provide a detailed plan including topics for two sessions per week, learning activities, and a case study.</p>
         <ul>
           <li>
-            <Link to="/module/1" className="animated-underline">
+            <a href="#/module/1" className="animated-underline">
               <strong>Module 1:</strong> Foundations of Institutional Higher Education Management
               <span className="module-link-icon" aria-hidden="true">→</span>
-            </Link>
+            </a>
           </li>
-          <li><strong>Module 2:</strong> Governance Structures and Stakeholders in Higher Education</li>
+          <li>
+            <a href="#/module/2" className="animated-underline">
+              <strong>Module 2:</strong> Governance Structures and Stakeholders in Higher Education
+              <span className="module-link-icon" aria-hidden="true">→</span>
+            </a>
+          </li>
           <li><strong>Module 3:</strong> Strategic Planning in the Institutional Context</li>
           <li><strong>Module 4:</strong> Higher Education Finance and Budgeting</li>
           <li><strong>Module 5:</strong> Resource Allocation and Financial Decision-Making</li>

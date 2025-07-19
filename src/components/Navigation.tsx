@@ -78,7 +78,7 @@ const Navigation: React.FC = () => {
           <LinkedInIcon />
         </a>
         <a
-          href="https://www.youtube.com/@your-channel-id"
+          href="https://www.youtube.com/@mohamadaoude8620"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"

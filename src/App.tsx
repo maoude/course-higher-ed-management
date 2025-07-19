@@ -6,12 +6,17 @@ import HomePage from './pages/HomePage';
 import SyllabusPage from './pages/SyllabusPage';
 import Module1Page from './pages/Module1Page';
 import Module1Session1SlidesPage from './pages/Module1Session1SlidesPage';
-import Module1Session2SlidesPage from './pages/Module1Session2SlidesPage'; // Import Session 2 slides page
+import Module1Session2SlidesPage from './pages/Module1Session2SlidesPage';
+import Module2Page from './pages/Module2Page';
+import Module2Session1SlidesPage from './pages/Module2Session1SlidesPage';
+import Module2Session2SlidesPage from './pages/Module2Session2SlidesPage';
+import Module2Session1LecturePage from './pages/Module2Session1LecturePage';
+import Module2Session2LecturePage from './pages/Module2Session2LecturePage';
 import ScrollToTop from './components/ScrollToTop';
-import { useScrollAnimation } from './hooks/useScrollAnimation'; // Import the scroll animation hook
+import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 const App: React.FC = () => {
-  useScrollAnimation(); // Call the hook to enable scroll animations
+  useScrollAnimation();
 
   return (
     <>
@@ -21,14 +26,23 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/syllabus" element={<SyllabusPage />} />
+          
+          {/* Module 1 Routes */}
           <Route path="/module/1" element={<Module1Page />} />
           <Route path="/module/1/session/1/slides" element={<Module1Session1SlidesPage />} />
-          <Route path="/module/1/session/2/slides" element={<Module1Session2SlidesPage />} /> {/* Route for Session 2 slides */}
+          <Route path="/module/1/session/2/slides" element={<Module1Session2SlidesPage />} />
+          
+          {/* Module 2 Routes */}
+          <Route path="/module/2" element={<Module2Page />} />
+          <Route path="/module/2/session/1/slides" element={<Module2Session1SlidesPage />} />
+          <Route path="/module/2/session/1/lecture" element={<Module2Session1LecturePage />} />
+          <Route path="/module/2/session/2/slides" element={<Module2Session2SlidesPage />} />
+          <Route path="/module/2/session/2/lecture" element={<Module2Session2LecturePage />} />
         </Routes>
       </div>
       <footer style={{
-        backgroundColor: 'var(--clr-accent)', // Use CSS Variable
-        color: 'var(--clr-text-on-dark)',   // Use CSS Variable
+        backgroundColor: 'var(--clr-accent)',
+        color: 'var(--clr-text-on-dark)',
         padding: '1.5rem',
         textAlign: 'center',
         marginTop: 'auto'
